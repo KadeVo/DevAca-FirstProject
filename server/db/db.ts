@@ -12,3 +12,9 @@ export async function getUsers() {
 export async function getUser(id) {
   return connection('users').where('id', id).first()
 }
+
+export async function getRestaurantByName(restaurantName: string) {
+  return connection('restaurants')
+    .select('*')
+    .where('restaurants.name', restaurantName)
+}

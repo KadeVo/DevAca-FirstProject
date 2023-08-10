@@ -13,4 +13,13 @@ router.get('/', async (req, res) => {
   }
 })
 
+router.get('/:restaurant', async (req, res, next)=>{
+  try{
+    const restaurant = req.params.restaurant
+
+  }catch(err){
+    
+  }
+})
+
 export default router
