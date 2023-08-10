@@ -1,0 +1,11 @@
+<div class="container">
+  {{#each restaurants}}
+  <div>
+    <div><img src="{{image}}" alt="{{description}}"/></div>
+    <div><p>{{cuisineType}}</p>
+    <p>{{address}}</p></div>
+    <div><a  href="/restaurants/{{restaurantNameHyphenated}}">{{restaurantName}}</a></div> 
+    <div>{{averageRating}}</div>
+  </div>
+  {{/each}}
+</div>
