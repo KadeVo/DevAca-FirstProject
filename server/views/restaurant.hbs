@@ -1,0 +1,15 @@
+<div class="container">
+  <img src="{{imageSource}}">
+  <div>
+    <p>{{cuisineType}}</p>
+    <p>{{address}}</p>
+  </div>
+  {{#each reviews}}
+  <div>
+    <div><p>{{timestamp}}</p>
+    <p>{{username}}</p></div>
+    <p>{{rating}}</p>
+    <p>{{review}}</p>
+  </div>
+  {{/each}}
+</div>
