@@ -17,6 +17,15 @@ server.set('view engine', 'hbs')
 server.set('views', Path.join(__dirname, 'views'))
 server.use(express.urlencoded({ extended: true }))
 
+// Home page
+server.get('/', async (req, res) => {
+  try {
+    res.render('home')
+  } catch (err) {
+    res.status(500).send('DATABASE ERROR: ' + err.message)
+  }
+})
+
 // Routes
 server.use('/restaurants', restaurants)
 

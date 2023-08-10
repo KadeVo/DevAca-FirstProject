@@ -4,21 +4,29 @@ import * as db from '../db/db.js'
 
 const router = express.Router()
 
-router.get('/', async (req, res) => {
+router.get('/:name', async (req, res) => {
   try {
-    const users = await db.getUsers()
-    res.render('index', { users: users })
+    res.render('restaurant')
   } catch (err) {
     res.status(500).send('DATABASE ERROR: ' + err.message)
   }
 })
 
-router.get('/:restaurant', async (req, res, next)=>{
-  try{
-    const restaurant = req.params.restaurant
+router.get('/:name/add', async (req, res) => {
+  try {
+    const restaurantName = req.params.name
+    res.render('addreview')
+  } catch (err) {
+    res.status(500).send('DATABASE ERROR: ' + err.message)
+  }
+})
 
-  }catch(err){
-    
+router.post('/:name/add', async (req, res) => {
+  try {
+    const restaurantName = req.params.name
+    res.render('addreview', restaurantName)
+  } catch (err) {
+    res.status(500).send('DATABASE ERROR: ' + err.message)
   }
 })
 
