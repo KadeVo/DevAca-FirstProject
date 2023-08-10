@@ -9,6 +9,12 @@ export async function getReviews() {
   // return connection('users').select()
 }
 
+export async function getRestaurantByName(restaurantName: string) {
+  return connection('restaurants')
+    .select('*')
+    .where('restaurants.name', restaurantName)
+}
+
 export async function getRestaurants() {
   // return connection('users').where('id', id).first()
 }
