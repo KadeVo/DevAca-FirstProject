@@ -1,0 +1,18 @@
+<div>
+<h2>Add review for {{restaurantName}}</h2>
+<form method="post" action="/new">
+  <label for="username" >Username:</label>
+  <input type="text" name="username">
+    <label for="rating" >Rating:</label>
+<input
+    class="rating"
+    max="5"
+    oninput="this.style.setProperty('--value', this.value)"
+    step="0.5"
+    type="range"
+    value="1">
+      <label for="review" >Review:</label>
+  <input type="text" name="review">
+  <button>Submit</button>
+</form>
+</div>
