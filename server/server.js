@@ -28,5 +28,6 @@ server.get('/', async (req, res) => {
 
 // Routes
 server.use('/restaurants', restaurants)
+server.use(express.static(__dirname + '/public'))
 
 export default server

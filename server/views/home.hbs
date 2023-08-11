@@ -1,11 +1,13 @@
-<div class="container">
-    <img src="https://www.eatthis.com/wp-content/uploads/sites/4/2021/12/mcdonalds-1.jpg?quality=82&strip=1
+<div class="entries">
+  <img class="restaurantImages" src="https://www.eatthis.com/wp-content/uploads/sites/4/2021/12/mcdonalds-1.jpg?quality=82&strip=1
     " alt=""/>
+  <div class="container">
+    <div class="nameRating"><a  href="/restaurants/mcdonalds" class="nameLink">McDonalds</a>
+         <p class="rating">5 stars</p></div>
     <div><p>Fast food</p>
-    <p>123 get fat fast lane, Auckland</p></div>
-    <div><a  href="/restaurants/mcdonalds">McDonalds</a></div> 
-    <div>5 stars</div>
+    <p>123 get fat fast lane, Auckland </p></div>
   </div>
+</div>
   {{#each restaurants}}
   <div>
    <img src="{{image}}" alt="{{description}}"/>
@@ -16,3 +18,4 @@
   </div>
   {{/each}}
 </div>
+
