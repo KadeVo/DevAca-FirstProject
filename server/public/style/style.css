@@ -2,6 +2,9 @@
 
 :root {
   --radius: 20px;
+  --card-width: 300px;
+  --card-height: 400px;
+  --image-height: 250px;
 }
 
 body {
@@ -13,8 +16,8 @@ body {
 }
 
 .restaurantImages {
-  height: 250px;
-  width: 300px;
+  height: var(--image-height);
+  width: var(--card-width);
   border-top-left-radius: var(--radius);
   border-top-right-radius: var(--radius);
 }
@@ -37,10 +40,10 @@ h1 {
 }
 
 .entries {
-  height: 400px;
+  height: var(--card-height);
   margin: 1.5em;
   border: 2px solid gray;
-  width: 300px;
+  width: var(--card-width);
   border-radius: var(--radius);
 }
 
