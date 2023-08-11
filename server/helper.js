@@ -5,3 +5,8 @@ export function urlToName(url) {
   )
   return capitalisedNameArray.join(' ')
 }
+
+export function nameToUrl(name) {
+  const lowercaseName = name.toLowerCase()
+  return lowercaseName.replace(' ', '-')
+}

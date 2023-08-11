@@ -1,6 +1,6 @@
 import * as Path from 'node:path'
 import * as URL from 'node:url'
-
+import * as db from '../server/db/db.js'
 import express from 'express'
 import handlebars from 'express-handlebars'
 
@@ -20,9 +20,11 @@ server.use(express.urlencoded({ extended: true }))
 // Home page
 server.get('/', async (req, res) => {
   try {
-    res.render('home')
+    const restaurants = await db.getAllRestaurantsWithPictures()
+    console.log('Restaurants Data:', restaurants)
+    res.render('home', { restaurants: restaurants })
   } catch (err) {
-    res.status(500).send('DATABASE ERROR: ' + err.message)
+    console.log(err.message)
   }
 })
 
