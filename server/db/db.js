@@ -9,7 +9,7 @@ export async function getReviews() {
   // return connection('users').select()
 }
 
-export async function getRestaurantByName(restaurantName: string) {
+export async function getRestaurantByName(restaurantName) {
   return connection('restaurants')
     .select('*')
     .where('restaurants.name', restaurantName)
@@ -19,11 +19,6 @@ export async function getRestaurants() {
   // return connection('users').where('id', id).first()
 }
 
-export async function addReview(
-  username: string,
-  rating: number,
-  review: string,
-  timestamp: number
-) {
+export async function addReview(username, rating, review, timestamp) {
   return connection('reviews').insert({ username, rating, review, timestamp })
 }
