@@ -20,27 +20,24 @@ router.get('/:restaurant', async (req, res) => {
   }
 })
 
-// router.get('/:name', async (req, res) => {
-//   try {
-//     res.render('restaurant')
-//   } catch (err) {
-//     res.status(500).send('DATABASE ERROR: ' + err.message)
-//   }
-// })
-
-router.get('/:name/add', async (req, res) => {
+router.get('/:restaurant/add', async (req, res) => {
   try {
-    const restaurantName = req.params.name
-    res.render('addreview')
+    const name = urlToName(req.params.restaurant)
+    const url = req.params.restaurant
+    res.render('addreview', { restaurantName: name, url })
   } catch (err) {
     res.status(500).send('DATABASE ERROR: ' + err.message)
   }
 })
 
-router.post('/:name/add', async (req, res) => {
+router.post('/:restaurant/add', async (req, res) => {
   try {
-    const restaurantName = req.params.name
-    res.render('addreview', restaurantName)
+    console.log(req.body)
+
+    const restaurantName = req.params.restaurant
+    const restaurant = await db.getRestaurantByName
+    await db.addReview(req.body.username, req.body.rating, req.body.review)
+    res.render('/:restaurant')
   } catch (err) {
     res.status(500).send('DATABASE ERROR: ' + err.message)
   }
