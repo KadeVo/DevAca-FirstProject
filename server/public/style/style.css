@@ -1,29 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@700&family=Lato:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Lato:wght@300;400&display=swap');
+
+:root {
+  --radius: 20px;
+  --card-width: 300px;
+  --card-height: 400px;
+  --image-height: 250px;
+}
 
 body {
   padding: 0;
   margin: 0;
   font-family: Lato, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
     sans-serif;
+  font-weight: 300;
 }
 
 .restaurantImages {
-  height: 250px;
-  width: 100%;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  height: var(--image-height);
+  width: var(--card-width);
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
 }
 
 h1 {
-  font-size: 2em;
-  padding: 0 0.75em;
-  font-family: Almarai, sans-serif;
+  font-size: 2.5em;
+  padding: 0 0.5em;
+  font-family: 'Josefin Sans', sans-serif;
   color: black;
 }
 
 .header {
   background-color: #06c167;
-  padding: 0.5em;
+  padding: 0.3em;
   margin: 0;
 }
 
@@ -32,11 +40,11 @@ h1 {
 }
 
 .entries {
-  height: 400px;
+  height: var(--card-height);
   margin: 1.5em;
   border: 2px solid gray;
-  width: 40%;
-  border-radius: 20px;
+  width: var(--card-width);
+  border-radius: var(--radius);
 }
 
 .container {
@@ -49,12 +57,15 @@ h1 {
   margin-bottom: 0;
 }
 
-.nameLink {
-  width: 65%;
+.rating {
+  width: 30%;
   display: inline-block;
 }
 
-.rating {
-  width: 30%;
+.nameLink {
+  font-family: Lato, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+    sans-serif;
+  font-weight: 400;
+  width: 65%;
   display: inline-block;
 }
