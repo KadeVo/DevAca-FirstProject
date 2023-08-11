@@ -1,9 +1,32 @@
 <div class="container">
+  <img src="https://www.eatthis.com/wp-content/uploads/sites/4/2021/12/mcdonalds-1.jpg?quality=82&strip=1">
+  <div>
+    <p>Fast food</p>
+    <p>123 get fat fast lane, Auckland</p>
+  </div>
+  <a href="/restaurants/mcdonalds/add">Add new review</a>
+  <div>
+    <div><p>12pm</p>
+    <p>karen</p></div>
+    <p>1 star</p>
+    <p>Omg I found a hair in my burger and I complained to the manager. They refused to refund my order. I am never coming back!</p>
+  </div>
+  <div>
+    <div><p>9am</p>
+    <p>mcdonaldsbiggestfan123</p></div>
+    <p>5 star</p>
+    <p>Yum yum yum! Nothing beats a good mcdonalds burger.</p>
+  </div>
+</div>
+
+
+<div class="container">
   <img src="{{imageSource}}">
   <div>
     <p>{{cuisineType}}</p>
     <p>{{address}}</p>
   </div>
+    {{!-- <a href="/restaurants/{{restaurantName}}/add">Add new review</a> --}}
   {{#each reviews}}
   <div>
     <div><p>{{timestamp}}</p>
