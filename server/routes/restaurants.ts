@@ -15,10 +15,13 @@ router.get('/', async (req, res) => {
 
 router.get('/:restaurant', async (req, res, next)=>{
   try{
-    const restaurant = req.params.restaurant
-
+    const restaurantPara: string = req.params.restaurant
+    //const restaurantName = restaurantPara.replace('-', '')
+    const restaurant = await db.getRestaurantByName(restaurantPara) 
+    const reviews = await db.getRestaurantReviews(restaurant.id)
+    res.render('restaurant', {restaurant, reviews})
   }catch(err){
-    
+    res.status(500).send('DATABASE ERROR: ' + err.message)
   }
 })
 
