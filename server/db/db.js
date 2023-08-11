@@ -11,8 +11,20 @@ export async function getReviews() {
 
 export async function getRestaurantByName(restaurantName) {
   return connection('restaurants')
-    .select('*')
+    .select(
+      'restaurants.id',
+      'restaurants.url as imageSource',
+      'restaurants.cuisine_type as cuisineType',
+      'restaurants.location as address'
+    )
     .where('restaurants.name', restaurantName)
+    .first()
+}
+
+export function getRestaurantReviews(restaurantId: number) {
+  return connection('restaurant_reviews')
+    .select('*')
+    .where('restaurant_reviews.restaurant_id', restaurantId)
 }
 
 export async function getRestaurants() {
