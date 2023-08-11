@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@700&family=Lato:wght@300&display=swap');
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.restaurantImages {
+  height: 250px;
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+h1 {
+  font-size: 2em;
+  /* padding: 1em; */
+  font-family: Almarai, sans-serif;
+  color: black;
+}
+
+.header {
+  background-color: #06c167;
+  padding: 0.5em;
+  margin: 0;
+}
+
+.underEats {
+  text-decoration: none;
+}
+
+.entries {
+  height: 400px;
+  margin: 1.5em;
+  border: 2px solid gray;
+  width: 40%;
+  border-radius: 20px;
+}
+
+.container {
+  padding: 0.75em;
+  height: 380px;
+}
+
+.nameRating {
+  display: inline;
+  margin-bottom: 0;
+}
+
+.nameLink {
+  width: 65%;
+  display: inline-block;
+}
+
+.rating {
+  width: 30%;
+  display: inline-block;
+}
