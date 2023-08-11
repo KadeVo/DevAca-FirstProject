@@ -2,17 +2,17 @@ import express from 'express'
 
 import * as db from '../db/db.js'
 
+import { urlToName } from '../helper.js'
+
 const router = express.Router()
 
 router.get('/:restaurant', async (req, res) => {
   try {
-    const restaurantPara = req.params.restaurant
-   
-    //const restaurantName = restaurantPara.replace('-', '')
-    const restaurant = await db.getRestaurantByName(restaurantPara)
-   
+    const restaurantUrl = req.params.restaurant
+    const restaurantName = urlToName(restaurantUrl)
+    const restaurant = await db.getRestaurantByName(restaurantName)
     const reviews = await db.getRestaurantReviews(restaurant.id)
-    
+
     res.render('restaurant', { ...restaurant, reviews })
   } catch (err) {
     console.error(err)
@@ -20,13 +20,13 @@ router.get('/:restaurant', async (req, res) => {
   }
 })
 
-router.get('/:name', async (req, res) => {
-  try {
-    res.render('restaurant')
-  } catch (err) {
-    res.status(500).send('DATABASE ERROR: ' + err.message)
-  }
-})
+// router.get('/:name', async (req, res) => {
+//   try {
+//     res.render('restaurant')
+//   } catch (err) {
+//     res.status(500).send('DATABASE ERROR: ' + err.message)
+//   }
+// })
 
 router.get('/:name/add', async (req, res) => {
   try {
@@ -45,7 +45,5 @@ router.post('/:name/add', async (req, res) => {
     res.status(500).send('DATABASE ERROR: ' + err.message)
   }
 })
-
-
 
 export default router
